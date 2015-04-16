@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 15, 2015 11:51:50 AM by Hibernate Tools 4.3.1 -->
-<hibernate-mapping>
-    
-    
+<hibernate-mapping>   
+    <!-- Definitions of Jasypt types -->
     <typedef name="encryptedString" class="org.jasypt.hibernate4.type.EncryptedStringType">
         <param name="encryptorRegisteredName">configurationHibernateEncryptor</param>
     </typedef>
 
-<!--    <class name="eu.ubitech.hibernateencryption.models.User" table="User" catalog="jasypt" optimistic-lock="version">
+    <!-- XML Definition of Models instead of using Java Class -->
+    <!--    <class name="eu.ubitech.hibernateencryption.models.User" table="User" catalog="jasypt" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
