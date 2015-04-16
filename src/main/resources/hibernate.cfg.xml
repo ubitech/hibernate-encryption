@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.provider_class">org.jasypt.hibernate4.connectionprovider.EncryptedPasswordDriverManagerConnectionProvider</property>
+    <property name="connection.encryptor_registered_name">configurationHibernateEncryptor</property>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://192.168.3.3:3306/jasypt?zeroDateTimeBehavior=convertToNull</property>
+    <property name="connection.username">jasypt</property>
+    <property name="connection.password">!jasypt!</property>
+    <property name="hibernate.show_sql">true</property>
+    <!-- Mappings -->
+    <mapping resource="eu/ubitech/hibernateencryption/models/User.hbm.xml"/>
+    <mapping class="eu.ubitech.hibernateencryption.models.User"/>
+  </session-factory>
+</hibernate-configuration>
